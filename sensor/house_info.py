@@ -1,5 +1,4 @@
-import datetime
-from time import strftime
+from datetime import date, datetime
 
 
 class HouseInfo:
@@ -16,7 +15,7 @@ class HouseInfo:
                 field_data.append(record[field])
         return field_data
 
-    def get_data_by_date(self, field, rec_date=datetime.date.today()):
+    def get_data_by_date(self, field, rec_date=date.today()):
         field_data = []
 
         for record in self.data:
