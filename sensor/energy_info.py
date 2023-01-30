@@ -6,7 +6,7 @@ class EnergyData(HouseInfo):
     ENERGY_BITS = 0x0F0
 
     def _get_energy(self, rec):
-        energy = int(str(rec), base=16)
+        energy = int(rec, base=16)
         energy = energy and self.ENERGY_BITS
         energy = energy >> 4
         return energy
@@ -27,5 +27,5 @@ class EnergyData(HouseInfo):
         return self._convert_data(recs)
 
     def calculate_energy_usage(self, data):
-        total_energy = sum([field * self.ENERGY_PER_BULB for field in self._convert_data(data)])
+        total_energy = sum([field * self.ENERGY_PER_BULB for field in data])
         return total_energy
